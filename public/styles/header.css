@@ -1,0 +1,14 @@
+header {
+  height: 520px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  background-color: #6295ff;
+  background-image: url("../images/backgroundImage.png");
+}
+
+header #nameID {
+  margin-top: 5px;
+}
