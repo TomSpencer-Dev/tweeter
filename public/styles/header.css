@@ -1,3 +1,4 @@
+/*Define header properties*/
 header {
   height: 520px;
   width: 100%;
@@ -12,3 +13,4 @@ header {
 header #nameID {
   margin-top: 5px;
 }
+
