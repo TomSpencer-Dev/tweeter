@@ -42,10 +42,10 @@ button {
   background-color: #4056A1;
   color: white;
   font-family: 'Bungee', sans-serif;
-padding: 5px;
-font-size: 1em;
+  padding: 5px;
+  font-size: 1em;
 }
 
 output {
-font-family: 'Bungee', sans-serif;
+  font-family: 'Bungee', sans-serif;
 }

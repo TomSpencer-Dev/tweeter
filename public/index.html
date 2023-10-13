@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -62,11 +63,33 @@
       <form method="post" action="/tweets/">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
-        <div class = "submitCounter">
+        <div class="submitCounter">
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">0</output>
         </div>
       </form>
+      <article>
+        <header>
+          <div id="tweetIcon">
+            <img src="/images/profile-hex.png">
+            <p>Name</p>
+          </div>
+          <p id = "handle">@SirIsaac</p>
+        </header>
+        <div id="tweetDiv">
+          <p id = "tweet">If I have seen further it is by standing on he shoulders of giants</p>
+        </div>
+        <footer>
+          <div>
+            <p id = "tweetDate">10 days ago</p>
+          </div>
+          <div>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
     </section>
   </main>
 </body>
