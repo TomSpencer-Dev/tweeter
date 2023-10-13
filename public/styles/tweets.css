@@ -13,16 +13,18 @@ article header {
   background-image: none;
   align-items: flex-start;
   padding: 20px;
+  margin-bottom: 20px;
   height: 100px;
 }
 
 article header img {
-  width: 80px;
+  width: 60px;
 }
 
 #tweetIcon {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 article header p {
@@ -62,10 +64,16 @@ article footer i:hover {
 }
 
 article footer i {
-color: #5e5ee7;
+  color: #5e5ee7;
 }
 
 #handle {
   color: #b0b8d1;
-font-weight: 600; 
+  font-weight: 600;
+}
+
+header #nameID {
+  margin-left: 20px;
+  margin-top: 20px;
+color: black;
 }
