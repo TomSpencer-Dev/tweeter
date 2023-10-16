@@ -21,7 +21,7 @@ article header img {
   width: 60px;
 }
 
-#tweetIcon {
+.tweetIcon {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,7 +31,7 @@ article header p {
   margin-left: 10px
 }
 
-#tweetDiv {
+.tweetDiv {
   display: flex;
   justify-content: flex-start;
   border-bottom: solid 5px black;
@@ -46,11 +46,11 @@ article footer {
   padding: 20px;
 }
 
-#tweetDate {
+.tweetDate {
   margin: 0;
 }
 
-#tweet {
+.tweet {
   margin: 24px;
   font-weight: 600;
 }
@@ -67,12 +67,12 @@ article footer i {
   color: #5e5ee7;
 }
 
-#handle {
+.handle {
   color: #b0b8d1;
   font-weight: 600;
 }
 
-header #nameID {
+header .nameID {
   margin-left: 20px;
   margin-top: 20px;
 color: black;
