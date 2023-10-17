@@ -1,30 +1,10 @@
 $(document).ready(function() {
   // Fake data taken from initial-tweets.json
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
+  function loadTweets() {
+    $.ajax("/tweets", { method: "get" })
+      .then((data) => renderTweets(data))
+      .catch((err) => console.log("failed to load tweets: ", err));
+  };
   //Implement a createTweetElement function
   const createTweetElement = function(tweet) {
     //Create hard coded tweets
@@ -41,7 +21,7 @@ $(document).ready(function() {
           </div>
           <footer>
             <div>
-              <p id="tweetDate">${tweet.created_at}</p>
+              <p id="tweetDate">${timeago.format(tweet.created_at)}</p>
             </div>
             <div>
               <i class="fa-solid fa-flag"></i>
@@ -51,25 +31,24 @@ $(document).ready(function() {
           </footer>
         </article>`);
     return $tweet;
-
   };
-
-
-
-  // const $tweet = createTweetElement(data);
-  // // Test / driver code (temporary)
-  // console.log($tweet); // to see what it looks like
-  // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
-
 
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+      $('#tweets-container').prepend($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
     }
   };
+  
+$(function() {
+  $("#tweetForm").on("submit", function(event) {
+    event.preventDefault();
 
-  renderTweets(data);
-
+    const formData = $(this).serialize();
+    $.ajax("/tweets", {
+      method: "post", data: $(this).serialize()
+    }).done(() => loadTweets()).fail((err) => console.log("Did not post data: ", err));
+  });
+  loadTweets();
+});
 });
