@@ -39,16 +39,23 @@ $(document).ready(function() {
       $('#tweets-container').prepend($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
     }
   };
-  
-$(function() {
-  $("#tweetForm").on("submit", function(event) {
-    event.preventDefault();
 
-    const formData = $(this).serialize();
-    $.ajax("/tweets", {
-      method: "post", data: $(this).serialize()
-    }).done(() => loadTweets()).fail((err) => console.log("Did not post data: ", err));
+  $(function() {
+    $("#tweetForm").on("submit", function(event) {
+      event.preventDefault();
+      const data = $(this).serialize();
+      const tweet = $(this).find("textarea").val();
+      if (!tweet) {
+        alert("There is no tweet content");
+      } else if (tweet.length > 140) {
+        alert("Your tweet is too long!");
+      } else {
+        const formData = $(this).serialize();
+        $.ajax("/tweets", {
+          method: "post", data: data
+        }).done(() => loadTweets(), $("#tweetForm").trigger("reset")).fail((err) => console.log("Did not post data: ", err));
+      }
+    });
+    loadTweets();
   });
-  loadTweets();
-});
 });
