@@ -1,4 +1,11 @@
 $(document).ready(function() {
+
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
   // Fake data taken from initial-tweets.json
   function loadTweets() {
     $.ajax("/tweets", { method: "get" })
@@ -17,7 +24,7 @@ $(document).ready(function() {
             <p class="handle">${tweet.user.handle}</p>
           </header>
           <div class="tweetDiv">
-            <p class="tweet">${tweet.content.text}</p>
+            <p class="tweet">${escape(tweet.content.text)}</p>
           </div>
           <footer>
             <div>
