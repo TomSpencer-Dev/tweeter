@@ -1,0 +1,9 @@
+.error {
+color: red;
+border: solid 3px red;
+width: 100%;
+display: flex;
+justify-content: center;
+margin: 20px;
+padding: 5px;
+}
