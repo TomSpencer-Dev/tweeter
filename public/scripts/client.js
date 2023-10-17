@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+$("#error").hide().empty();
+
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -49,13 +51,14 @@ const escape = function (str) {
 
   $(function() {
     $("#tweetForm").on("submit", function(event) {
+      $("#error").hide().empty();
       event.preventDefault();
       const data = $(this).serialize();
       const tweet = $(this).find("textarea").val();
       if (!tweet) {
-        alert("There is no tweet content");
+        $("#error").append("🔺 Empty tweet. Please add some words to your tweet. 🔺").show();
       } else if (tweet.length > 140) {
-        alert("Your tweet is too long!");
+        $("#error").append("🔺 Too Long. Please shorten your tweet to 140 characters. 🔺").show();
       } else {
         const formData = $(this).serialize();
         $.ajax("/tweets", {
