@@ -2,7 +2,6 @@ article {
   border: solid 5px black;
   margin-top: 80px;
   margin-bottom: 20px;
-
 }
 
 article header {
@@ -54,7 +53,7 @@ article footer {
   margin: 24px;
   font-weight: 600;
   word-break: break-all;
-  white-space:normal;
+  white-space: normal;
 }
 
 article:hover {
@@ -77,5 +76,11 @@ article footer i {
 header .nameID {
   margin-left: 20px;
   margin-top: 20px;
-color: black;
+  color: black;
+}
+
+@media screen and (min-width: 1024px) {
+  article header {
+    margin-top: 20px;
+  }
 }

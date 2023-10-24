@@ -50,35 +50,37 @@
       <i class="fa-solid fa-angles-down"></i>
     </div>
   </nav>
-  <!-- Header section -->
-  <header>
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <div>
-      <h2 id="nameID">Your Name</h2>
-    </div>
-  </header>
-
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <div id="error"></div>
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form id="tweetForm">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div class="submitCounter">
-          <button type="submit" id="submitTweet">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">0</output>
-        </div>
-      </form>
-      <div id="tweets-container">
+  <!-- Header and Main content sections-->
+  <div class="bodyContent">
+    <!-- Header section -->
+    <header>
+      <div>
+        <img src="/images/profile-hex.png">
       </div>
-    </section>
-  </main>
+      <div>
+        <h2 id="nameID">Your Name</h2>
+      </div>
+    </header>
 
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <div id="error"></div>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form id="tweetForm">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="submitCounter">
+            <button type="submit" id="submitTweet">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">0</output>
+          </div>
+        </form>
+        <div id="tweets-container">
+        </div>
+      </section>
+    </main>
 
+  </div>
 </body>
 
 </html>

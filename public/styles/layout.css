@@ -31,3 +31,17 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+@media screen and (min-width: 1024px) {
+  .bodyContent {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: center;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+  }
+}
