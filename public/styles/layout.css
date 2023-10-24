@@ -27,11 +27,16 @@ body {
   align-items: center;
 }
 
+.bodyContent {
+  width: 100%;
+}
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .bodyContent {
     display: flex;
     flex-direction: row;
@@ -43,5 +48,6 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 200px;
+    width: 55%;
   }
 }

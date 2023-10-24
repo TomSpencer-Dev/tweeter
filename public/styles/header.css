@@ -14,13 +14,13 @@ header #nameID {
   margin-top: 5px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   header {
     display: flex;
-    margin-right: 200px;
+    margin-right: 100px;
     justify-content: center;
     margin-top: 200px;
-    width: 100%;
+    width: 40%;
     height: 400px;
     background-color: #6295ff;
   }

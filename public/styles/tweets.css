@@ -79,7 +79,7 @@ header .nameID {
   color: black;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   article header {
     margin-top: 20px;
   }
