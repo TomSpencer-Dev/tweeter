@@ -1,5 +1,6 @@
+//Apply code once document is ready
 $(document).ready(function() {
-
+  //Hide error element
   $("#error").hide().empty();
 
   const escape = function(str) {
@@ -40,6 +41,7 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  //function to render tweets on page
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
@@ -47,14 +49,17 @@ $(document).ready(function() {
     }
   };
 
+  //function with event listener listening for submit button being pressed
   $(function() {
     $("#tweetForm").on("submit", function(event) {
       $("#error").hide().empty();
       event.preventDefault();
       const data = $(this).serialize();
       const tweet = $(this).find("textarea").val();
+      //If no tweet, display error message
       if (!tweet) {
         $("#error").append("🔺 Empty tweet. Please add some words to your tweet. 🔺").show();
+      //It tweet too long, display error message
       } else if (tweet.length > 140) {
         $("#error").append("🔺 Too Long. Please shorten your tweet to 140 characters. 🔺").show();
       } else {
