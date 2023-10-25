@@ -13,7 +13,7 @@ $(document).ready(function() {
     $.ajax("/tweets", { method: "get" })
       .then((data) => renderTweets(data))
       .catch((err) => console.log("failed to load tweets: ", err));
-  };
+  }
   //Implement a createTweetElement function
   const createTweetElement = function(tweet) {
     //Create hard coded tweets
