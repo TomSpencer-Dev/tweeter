@@ -28,9 +28,13 @@ body {
 }
 
 .bodyContent {
-  width: 100%;
+  width: 100%
 }
 
+.container {
+  width: 90%;
+  margin: auto;
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
@@ -44,9 +48,7 @@ body {
     justify-content: center;
   }
 
-  main {
-    display: flex;
-    justify-content: center;
+  .container {
     margin-top: 200px;
     width: 55%;
   }

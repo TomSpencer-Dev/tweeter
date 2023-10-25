@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
-$("#error").hide().empty();
+  $("#error").hide().empty();
 
-const escape = function (str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   // Fake data taken from initial-tweets.json
   function loadTweets() {
@@ -29,9 +29,7 @@ const escape = function (str) {
             <p class="tweet">${escape(tweet.content.text)}</p>
           </div>
           <footer>
-            <div>
-              <p id="tweetDate">${timeago.format(tweet.created_at)}</p>
-            </div>
+              <p class="tweetDate">${timeago.format(tweet.created_at)}</p>
             <div>
               <i class="fa-solid fa-flag"></i>
               <i class="fa-solid fa-retweet"></i>
@@ -63,7 +61,7 @@ const escape = function (str) {
         const formData = $(this).serialize();
         $.ajax("/tweets", {
           method: "post", data: data
-        }).done(() => loadTweets(), $("#tweetForm").trigger("reset")).fail((err) => console.log("Did not post data: ", err));
+        }).done(() => loadTweets(), $("#tweetForm").trigger("reset"), $(".counter").html(0)).fail((err) => console.log("Did not post data: ", err));
       }
     });
     loadTweets();

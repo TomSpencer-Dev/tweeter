@@ -1,17 +1,16 @@
 article {
   border: solid 5px black;
-  margin-top: 80px;
-  margin-bottom: 20px;
+  margin: 1em 0;
+  padding: 1em;
 }
 
 article header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-items: flex-start;
+
   background-color: #f4f1ec;
   background-image: none;
-  align-items: flex-start;
-  padding: 20px;
   margin-bottom: 20px;
   height: 100px;
 }
@@ -30,34 +29,38 @@ article header p {
   margin-left: 10px
 }
 
-.tweetDiv {
-  display: flex;
-  justify-content: flex-start;
-  border-bottom: solid 5px black;
-  margin: 10px;
-}
-
 article footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 20px;
-}
-
-.tweetDate {
-  margin: 0;
 }
 
 .tweet {
-  margin: 24px;
   font-weight: 600;
   word-break: break-all;
   white-space: normal;
 }
 
+.tweetDiv {
+  border-bottom: solid 5px black;
+}
+
 article:hover {
   box-shadow: 10px 10px;
+}
+
+article footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article footer div {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 article footer i:hover {
@@ -73,14 +76,12 @@ article footer i {
   font-weight: 600;
 }
 
-header .nameID {
-  margin-left: 20px;
-  margin-top: 20px;
-  color: black;
-}
-
 @media screen and (min-width: 992px) {
   article header {
     margin-top: 20px;
+  }
+
+  article footer div {
+    width: 10%;
   }
 }
