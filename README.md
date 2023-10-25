@@ -23,5 +23,5 @@ A simple single-page AJAX-based Twitter clone that uses jQuery, HTML5, and plain
 ## Screenshots
 !["Screenshot of mobile view"](URL)
 !["Screenshot of desktop view"](docs/desktop-view.png)
-!["Screenshot of error handling"](URL)
+!["Screenshot of error handling"](docs/error-handling-view.png)
 
