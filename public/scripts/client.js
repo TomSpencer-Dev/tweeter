@@ -3,6 +3,8 @@ $(document).ready(function() {
   //Hide error element
   $("#error").hide().empty();
 
+  loadTweets();
+
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -43,9 +45,10 @@ $(document).ready(function() {
 
   //function to render tweets on page
   const renderTweets = function(tweets) {
+    $("#tweets-container").empty();
     for (const tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
-      $('#tweets-container').prepend($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+      const tweetElement = createTweetElement(tweet);
+      $('#tweets-container').prepend(tweetElement); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
     }
   };
 
@@ -59,16 +62,14 @@ $(document).ready(function() {
       //If no tweet, display error message
       if (!tweet) {
         $("#error").append("🔺 Empty tweet. Please add some words to your tweet. 🔺").show();
-      //It tweet too long, display error message
+        //It tweet too long, display error message
       } else if (tweet.length > 140) {
         $("#error").append("🔺 Too Long. Please shorten your tweet to 140 characters. 🔺").show();
       } else {
-        const formData = $(this).serialize();
         $.ajax("/tweets", {
           method: "post", data: data
         }).done(() => loadTweets(), $("#tweetForm").trigger("reset"), $(".counter").html(0)).fail((err) => console.log("Did not post data: ", err));
       }
     });
-    loadTweets();
   });
 });
